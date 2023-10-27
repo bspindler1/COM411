@@ -29,6 +29,7 @@ def run_task3():
     good_steps = []
     bad_steps = []
     for index in data:
+        print(index[1])
         if index[1] >= 50:
             bad_steps.append(index)
         else:
