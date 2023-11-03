@@ -38,4 +38,4 @@ def run_task2():
     display_text("library.txt")
 
 
-run_task2()
+run()

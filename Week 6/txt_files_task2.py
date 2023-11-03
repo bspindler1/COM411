@@ -1,3 +1,5 @@
+
+
 def display_chars(file_path, num_chars):
     with open(file_path) as file:
         data = file.read(num_chars)
@@ -21,5 +23,5 @@ def run_task2():
     display_line("library.txt")
     display_text("library.txt")
 
-if __name__ == "__main__":
-    run_task2()
+
+run_task2()
