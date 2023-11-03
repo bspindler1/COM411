@@ -13,7 +13,7 @@ def read_csv(path):
 
 
 def run_task1():
-    read_csv("C:\Users\mroak\vscode\COM411\Week 6\clothing.csv")
+    read_csv("Week 6\clothing.csv")
 
 
 def extract(path):
@@ -29,8 +29,30 @@ def extract(path):
 
 
 def run_task2():
-    extract("C:\Users\mroak\vscode\COM411\Week 6\clothing.csv")
+    extract("Week 6\clothing.csv")
 
 
-run_task2()
+def export(path, items):
+    print("Exporting...")
+    with open(path, "a") as file:
+        for count in range(items):
+            print("Please enter the item id:")
+            item_id = int(input())
+
+            print("Please enter the item name:")
+            item_name = input()
+
+            print("Please enter the item colour:")
+            item_colour = input()
+
+            data = f"{item_id},{item_name},{item_colour}\n"
+            file.write(data)
+    print("Done!")
+    
+
+def run_task3():
+    export("Week 6\exported_items.csv", 2)
+
+run_task3()
+        
 
