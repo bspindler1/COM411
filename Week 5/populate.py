@@ -20,4 +20,4 @@ def run_task4():
     print(f"Escape route: {route}")
 
 
-
+run_task4()
