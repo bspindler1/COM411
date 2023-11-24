@@ -15,8 +15,29 @@ class Robot:
     def __str__(self):
         return f'Robot {self.name} is {self.age} years old with an energy of {self.energy}'
 
+    def grow(self):
+        self.age = self.age + 1
+
+    def eat(self, amount):
+        p_energy = self.energy + amount
+        if p_energy > Robot.MAX_ENERGY:
+            return p_energy - self.energy
+        else:
+            p_energy = self.energy
+            return 0
+
+    def move(self, distance):
+        p_energy = self.energy - distance
+        if p_energy < 0:
+            self.energy = 0
+            return self.energy - abs(p_energy)
+        else:
+            self.energy = p_energy
+            return 0
+
 
 if (__name__ == "__main__"):
   robot = Robot()
   robot.display()
+
 
