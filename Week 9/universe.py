@@ -3,6 +3,9 @@ import random
 from robot import Robot
 from human import Human
 
+import matplotlib.pyplot as plt
+
+
 
 class Universe:
 
@@ -28,3 +31,26 @@ class Universe:
 
     def __str__(self):
         return f"universe(planets = {self.planets}"
+
+    def show_populations(self, selection):
+        x_values = []
+        y_values = []
+
+        for planet in self.planets:
+            x_values.append(planet.name)
+
+            if selection == "human":
+                y_values.append(len(planet.inhabitants['humans']))
+            else:
+                y_values.append(len(planet.inhabitants['robots']))
+
+
+        plt.bar(x_values, y_values)
+        plt.show()
+
+if __name__ == "__main__":
+    universe = Universe()
+    universe.generate()
+    print(repr(universe))
+    universe.show_populations("humans")
+    universe.show_populations("robots")
