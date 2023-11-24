@@ -30,8 +30,6 @@ class Planet:
 
 
 
-
-
 if (__name__ == "__main__"):
   planet = Planet("Earth")
   print(repr(planet))
